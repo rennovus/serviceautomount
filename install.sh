@@ -12,7 +12,7 @@
 sudo apt update -y && sudo apt upgrade -y && sudo apt autoclean -y && \
 sudo apt install -y zip unzip python3-pip nodejs npm rclone fuse mergerfs make python build-essential && \
 sudo git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
-mkdir -p "$HOME"/.start "$HOME"/.stop "$HOME"/cloud/mount/ "$HOME"/scripts && \
+mkdir -p "$HOME"/sbxn-serviceautomount/accounts "$HOME"/.start "$HOME"/.stop "$HOME"/cloud/mount/ "$HOME"/scripts && \
 cd sbxn-serviceautomount && \
 mv rclone-start.sh /usr/local/bin/ && \
 mv rclone-stop.sh /usr/local/bin/ && \
