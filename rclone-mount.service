@@ -1,0 +1,19 @@
+[Unit]
+Description=RClone Mount Network Drives
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=forking
+EnvironmentFile=-/etc/systemd/system/rclone-mount.env
+ExecStart=/usr/local/bin/rclone-start.sh
+ExecStop=/usr/local/bin/rclone-stop.sh
+Restart=always
+RestartSec=10
+User=1000
+Group=1000
+
+
+[Install]
+WantedBy=multi-user.target
