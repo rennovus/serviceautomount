@@ -136,7 +136,7 @@ sudo nano /usr/local/bin/rclone-stop.sh
 
 ### Service and Environment
 
-#### Environment Variables Match rclone-start.sh File
+#### Environment variables are the absolute path to files/folders `(ex. /home/myuser/.../)`
 ```sh
 sudo nano /etc/systemd/system/rclone-mount.env
 ```
