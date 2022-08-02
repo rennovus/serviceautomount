@@ -1,4 +1,13 @@
 #!/bin/bash
+################################################################################
+# Automation Script for Rclone
+#
+#   I am a hobbyist not a developer.
+#   Have suggestions hit me up!
+#   Discord XanderSlaze#0001
+#   https://discord.gg/5WygmaE6a7
+#   Updated: 8/1/2022
+################################################################################
 
 sudo apt update -y && sudo apt upgrade -y && sudo apt autoclean -y && \
 sudo apt install -y zip unzip python3-pip nodejs npm rclone fuse mergerfs make python build-essential && \
