@@ -10,9 +10,12 @@
 ################################################################################
 
 sudo apt update -y && sudo apt upgrade -y && sudo apt autoclean -y && \
-sudo apt install -y zip unzip python3 python3-pip nodejs npm rclone fuse mergerfs make build-essential && \
+sudo apt-get install -y software-properties-common && \
+sudo add-apt -repository ppa:deadsnakes/ppa && \
+sudo apt-get update && \
+sudo apt install -y zip unzip python3.8 python3-pip rclone fuse mergerfs build-essential && \
 sudo git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
-mkdir -p "$HOME"/sbxn-serviceautomount/accounts "$HOME"/.start "$HOME"/.stop "$HOME"/cloud/mount/ "$HOME"/scripts && \
+mkdir -p `pwd`/sbxn-serviceautomount/accounts `pwd`/cloud/mount/ `pwd`/scripts && \
 cd sbxn-serviceautomount && \
 mv rclone-start.sh /usr/local/bin/ && \
 mv rclone-stop.sh /usr/local/bin/ && \
