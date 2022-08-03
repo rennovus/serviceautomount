@@ -32,13 +32,33 @@
 
 ## 📤 Install
 
+### Python3
+```sh
+sudo apt-get update -y && \
+sudo apt-get install -y software-properties-common && \
+sudo add-apt-repository ppa:deadsnakes/ppa && \
+sudo apt-get update -y && \
+sudo apt-get install -y python3.9 python3-pip && \
+```
+
+### Rclone & Fuse
+
+```sh
+sudo apt-get update -y && \
+sudo apt-get install -y rclone fuse mergerfs && \
+```
+
 ```sh
 sudo apt-get update -y && sudo apt-get install -y git && \
 mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
 git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
 cd sbxn-serviceautomount && \
-chmod +x install.sh && \
-sudo ./install.sh
+mkdir -p accounts && \
+mv rclone-start.sh /usr/local/bin/ && \
+mv rclone-stop.sh /usr/local/bin/ && \
+mv rclone-mount.service /etc/systemd/system/ && \
+mv rclone-mount.env /etc/systemd/system/ && \
+chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh
 ```
 
 Edit `fuse.conf` file and uncomment `#user_allow_other`
