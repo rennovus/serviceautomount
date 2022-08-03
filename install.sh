@@ -19,9 +19,4 @@ mv rclone-start.sh /usr/local/bin/ && \
 mv rclone-stop.sh /usr/local/bin/ && \
 mv rclone-mount.service /etc/systemd/system/ && \
 mv rclone-mount.env /etc/systemd/system/ && \
-chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh && \
-echo -en "\n\n**Required installation complete**\n\n" && \
-read -n 1 -s -r -p "Press any key to continue" && \
-echo -en "\n\nEnable APIs and Create Your Service Accounts...\n\nhttps://github.com/rennovus/sbxn-serviceautomount#-enable-google-apis\n\n" && \
-read -n 1 -s -r -p "Press any key to continue"
-echo -en "\n\n"
+chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh
