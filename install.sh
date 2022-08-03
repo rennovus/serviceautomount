@@ -11,7 +11,7 @@
 
 sudo apt-get update -y && \
 sudo apt-get install -y software-properties-common && \
-sudo add-apt -repository ppa:deadsnakes/ppa && \
+sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
 sudo apt-get install -y python3.9 python3-pip rclone fuse mergerfs && \
 sudo git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
