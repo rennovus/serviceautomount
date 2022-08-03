@@ -91,27 +91,25 @@ Rename the file to `credentials.json` and place it in the repository folder
 
 ## 🤖 Generate Service Accounts
 
-Install all the required python modules
+### Install all the required python modules
 ```sh
 cd ~/sbxn-serviceautomount && \
 sudo pip3 install -r requirements.txt
 ```
 
+### Create service accounts
 *NOTE: Authenticate using the same account that created the `credentials.json` file*
-
-Create service accounts
 ```sh
 sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only
 ```
 
+### List service accounts
 *NOTE: If you already have Service Account Keys and don't want to create new ones use the commands below:*
-
-List service accounts
 ```sh
 sudo python3 gen_sa_accounts.py --list-projects
 ```
 
-Download service accounts
+### Download service accounts
 ```sh
 sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
 ```
