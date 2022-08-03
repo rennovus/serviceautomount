@@ -97,9 +97,23 @@ cd ~/sbxn-serviceautomount && \
 sudo pip3 install -r requirements.txt
 ```
 
+#### NOTE: Authenticate using the same account that created the `credentials.json` file
+
 Create service accounts
 ```sh
 sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only
+```
+
+#### NOTE: If you already have Service Account Keys but don't want to create new ones use the commands below:
+
+List service accounts
+```sh
+sudo python3 gen_sa_accounts.py --list-projects
+```
+
+Download service accounts
+```sh
+sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
 ```
 
 ### Add Permissions for Service Accounts to access the SHAREDRIVE folder
