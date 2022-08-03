@@ -3,7 +3,7 @@
 # SERVICE AUTOMOUNT
 
 <pre>
-"Automatically Mount Rclone Drive(s) with Randomized Service Account Files."
+"Automatically Rclone Mount Shared Drives with Randomized Service Account Files."
 </pre>
 
 <img alt="SBXN Service Automount License" src="https://img.shields.io/github/license/rennovus/sbxn-serviceautomount"/>
@@ -17,7 +17,8 @@
 
 ## 🌠 Features
 
-- Uses Random Service Accounts to Mount Rclone Drive(s)
+- Uses Random Service Accounts
+- Rclone Union Compatible
 - Auto Mount After Reboot via systemd
 - Bypass 750GB Transfer Limit
 
@@ -79,27 +80,27 @@ sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only && \
 mv accounts ~/scripts/
 ```
 
-### Add Permissions for Service Accounts to access the TEAMDRIVE folder
+### Add Permissions for Service Accounts to access the SHAREDRIVE folder
 
 ### Option #1
 
 ```sh
-python3 add_to_team_drive.py -d TEAMDRIVEID
+python3 add_to_team_drive.py -d SHAREDRIVEID
 ```
-Replace `TEAMDRIVEID` with your `Teamdrive ID`
+Replace `SHAREDRIVEID` with your `Shared Drive ID`
 
 ![](https://i.imgur.com/53g521H.png)
 
 OR
 
-Replace `TEAMDRIVEID` with `Folder ID` Inside `My Drive` having Editor Permission
+Replace `SHAREDRIVEID` with `Folder ID` Inside `My Drive` having Editor Permission
 
 ![](https://i.imgur.com/hqPT2Jx.png)
 
 
-This will Add all the service accounts to your Teamdrive, so make sure you have `Manager` Role in this `TEAMDRIVEID`
+This will Add all the Service Accounts to your Shared Drive, so make sure you have `Manager` Role in this `SHAREDRIVEID`
 
-### Option #2 (Personally Easier TeamDrive Permission Management)
+### Option #2 (Personally Easier Shared Drive Permission Management)
 
 1. Create a [Google Group](https://groups.google.com) email for your Service Accounts
 2. Go to https://console.cloud.google.com
@@ -108,9 +109,9 @@ This will Add all the service accounts to your Teamdrive, so make sure you have 
 5. Adjust the column settings and number of rows
 6. Export the table (Google Docs Spreadsheet)
 7. Filter the emails and import them into your Google Group email
-8. Add the Google Group email to your `TEAMDRIVE` as a Content Manager
+8. Add the Google Group email to your `Shared Drive` as a Content Manager
 
-#### NOTE: Google Groups only allows 100 emails imported per 24 hours. I think there was a way around it but I don't remember.
+#### NOTE: Google Groups only allow 100 emails imported per 24 hours. I think there was a way around it but I don't remember.
 
 ## 🔧 Configuration
 
