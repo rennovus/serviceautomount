@@ -34,6 +34,7 @@
 
 ```sh
 sudo apt-get update -y && sudo apt-get install -y git && \
+mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
 git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
 cd sbxn-serviceautomount && \
 chmod +x install.sh && \
