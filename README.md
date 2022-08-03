@@ -48,6 +48,8 @@ sudo apt-get update -y && \
 sudo apt-get install -y rclone fuse mergerfs && \
 ```
 
+### Service Automount
+
 ```sh
 sudo apt-get update -y && sudo apt-get install -y git && \
 mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
