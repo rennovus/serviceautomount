@@ -77,8 +77,7 @@ sudo pip3 install -r requirements.txt
 
 Create service accounts
 ```sh
-sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only && \
-mv accounts ~/scripts/
+sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only
 ```
 
 ### Add Permissions for Service Accounts to access the SHAREDRIVE folder
@@ -113,6 +112,14 @@ This will Add all the Service Accounts to your Shared Drive, so make sure you ha
 8. Add the Google Group email to your `Shared Drive` as a Content Manager
 
 #### NOTE: Google Groups only allow 100 emails imported per 24 hours. I think there was a way around it but I don't remember.
+
+### Change ownership of the `accounts` folder and move it to the `scripts` folder
+```sh
+sudo chown -R $USER:$USER accounts
+```
+```sh
+mv accounts ~/scripts/
+```
 
 ## 🔧 Configuration
 
