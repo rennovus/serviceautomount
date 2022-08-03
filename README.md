@@ -24,8 +24,10 @@
 ## ⚙️ Requirements
 - Linux Server
 - Google Account
+- Google APIs & Libraries
 - Python3
 - Rclone
+- Fuse
 
 ## 📤 Install
 
@@ -37,7 +39,7 @@ chmod +x install.sh && \
 sudo ./install.sh
 ```
 
-Edit `fuse.conf` file and uncomment #user_allow_other
+Edit `fuse.conf` file and uncomment `#user_allow_other`
 ```sh
 sudo nano /etc/fuse.conf
 ```
@@ -67,14 +69,14 @@ Rename the file to `credentials.json` and place it in the repository folder
 
 Install all the required python modules
 ```sh
-cd "$HOME"/sbxn-serviceautomount && \
+cd ~/sbxn-serviceautomount && \
 sudo pip3 install -r requirements.txt
 ```
 
 Create service accounts
 ```sh
 sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only && \
-mv accounts "$HOME"/scripts/
+mv accounts ~/scripts/
 ```
 
 ### Add Permissions for Service Accounts to access the TEAMDRIVE folder
@@ -168,7 +170,7 @@ sudo systemctl status rclone-mount.service
 
 ### Remove Install Files
 ```sh
-sudo rm "$HOME"/sbxn-serviceautomount
+sudo rm ~/sbxn-serviceautomount
 ```
 
 You can take the files and folders you created to any server and get rclone setup quickly.
