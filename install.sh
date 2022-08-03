@@ -14,7 +14,7 @@ sudo apt-get install -y software-properties-common && \
 sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
 sudo apt-get install -y python3.9 python3-pip rclone fuse mergerfs && \
-sudo git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
+git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
 mkdir -p ~/sbxn-serviceautomount/accounts ~/cloud/mount/ ~/scripts && \
 cd sbxn-serviceautomount && \
 mv rclone-start.sh /usr/local/bin/ && \
