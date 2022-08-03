@@ -15,10 +15,6 @@ sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
 sudo apt-get install -y python3.9 python3-pip rclone fuse mergerfs && \
 mkdir -p accounts && \
-mkdir -p ~/scripts && \
-mkdir -p ~/cloud/mount && \
-mkdir -p ~/cloud/mount01 && \
-mkdir -p ~/cloud/mount02 && \
 mv rclone-start.sh /usr/local/bin/ && \
 mv rclone-stop.sh /usr/local/bin/ && \
 mv rclone-mount.service /etc/systemd/system/ && \
