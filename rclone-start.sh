@@ -16,8 +16,8 @@
 
 ## Create as many variables as you need for your solution
 ## These variables will go to your service accounts folder and choose a random file
-SA1=$(find "$HOME"/scripts/accounts/* -type f | shuf -n1)
-SA2=$(find "$HOME"/scripts/accounts/* -type f | shuf -n1)
+SA1=$(find "$HOME/scripts/accounts/*" -type f | shuf -n1)
+SA2=$(find "$HOME/scripts/accounts/*" -type f | shuf -n1)
 
 ## Save the file path output as another variable
 SERVICE01=${SA1}
