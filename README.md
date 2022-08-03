@@ -116,7 +116,7 @@ sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
 
 ### Add Permissions for Service Accounts to access the SHAREDRIVE folder
 
-### Option #1
+#### Option #1
 
 ```sh
 python3 add_to_team_drive.py -d SHAREDRIVEID
@@ -134,7 +134,7 @@ Replace `SHAREDRIVEID` with `Folder ID` Inside `My Drive` having Editor Permissi
 
 This will Add all the Service Accounts to your Shared Drive, so make sure you have `Manager` Role in this `SHAREDRIVEID`
 
-### Option #2 (Personally Easier Shared Drive Permission Management)
+#### Option #2 (Personally Easier Shared Drive Permission Management)
 
 1. Create a [Google Group](https://groups.google.com) email for your Service Accounts
 2. Go to https://console.cloud.google.com
@@ -145,7 +145,7 @@ This will Add all the Service Accounts to your Shared Drive, so make sure you ha
 7. Filter the emails and import them into your Google Group email
 8. Add the Google Group email to your `Shared Drive` as a Content Manager
 
-#### NOTE: Google Groups only allow 100 emails imported per 24 hours. I think there was a way around it but I don't remember.
+*NOTE: Google Groups only allow 100 emails imported per 24 hours. I think there was a way around it but I don't remember.*
 
 ### Change ownership of the `accounts` folder and move it to the `scripts` folder
 ```sh
