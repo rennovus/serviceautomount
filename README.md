@@ -38,14 +38,14 @@ sudo apt-get update -y && \
 sudo apt-get install -y software-properties-common && \
 sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
-sudo apt-get install -y python3.9 python3-pip && \
+sudo apt-get install -y python3.9 python3-pip
 ```
 
 ### Rclone & Fuse
 
 ```sh
 sudo apt-get update -y && \
-sudo apt-get install -y rclone fuse mergerfs && \
+sudo apt-get install -y rclone fuse mergerfs
 ```
 
 ### Service Automount
