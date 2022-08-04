@@ -92,19 +92,19 @@ Rename the file to `credentials.json` and place it in the `sbxn-serviceautomount
 
 ## 🤖 Generate Service Accounts
 
-### Create service accounts
+### Create New Project with Service Accounts
 *NOTE: Authenticate using the same account that created the `credentials.json` file*
 ```sh
 sudo python3 gen_sa_accounts.py --quick-setup 2 --new-only
 ```
 
-### List service accounts
+### List Existing Projects
 *NOTE: If you already have Service Account Keys and don't want to create new ones use the commands below:*
 ```sh
 sudo python3 gen_sa_accounts.py --list-projects
 ```
 
-### Download service accounts
+### Download Existing Service Account Files from Project
 ```sh
 sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
 ```
