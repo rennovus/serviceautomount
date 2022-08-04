@@ -60,7 +60,8 @@ sudo mv rclone-start.sh /usr/local/bin/ && \
 sudo mv rclone-stop.sh /usr/local/bin/ && \
 sudo mv rclone-mount.service /etc/systemd/system/ && \
 sudo mv rclone-mount.env /etc/systemd/system/ && \
-sudo chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh
+sudo chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh && \
+sudo pip3 install -r requirements.txt
 ```
 
 Edit `fuse.conf` file and uncomment `#user_allow_other`
@@ -77,7 +78,7 @@ sudo nano /etc/fuse.conf
 3. Configure your OAuth Client > Desktop App
 4. Create
 
-Rename the file to `credentials.json` and place it in the repository folder
+Rename the file to `credentials.json` and place it in the `sbxn-serviceautomount` repository folder
 
 #### To Enable the below two APIs, `visit the link > select the Project > Enable`
 
@@ -90,12 +91,6 @@ Rename the file to `credentials.json` and place it in the repository folder
 [serviceusage.googleapis.com](https://console.developers.google.com/apis/library/serviceusage.googleapis.com)
 
 ## 🤖 Generate Service Accounts
-
-### Install all the required python modules
-```sh
-cd ~/sbxn-serviceautomount && \
-sudo pip3 install -r requirements.txt
-```
 
 ### Create service accounts
 *NOTE: Authenticate using the same account that created the `credentials.json` file*
@@ -147,11 +142,9 @@ This will Add all the Service Accounts to your Shared Drive, so make sure you ha
 
 *NOTE: Google Groups only allow 100 emails imported per 24 hours. I think there was a way around it but I don't remember.*
 
-### Change ownership of the `accounts` folder and move it to the `scripts` folder
+Change ownership of the `accounts` folder and move it to the `scripts` folder
 ```sh
-sudo chown -R $USER:$USER accounts
-```
-```sh
+sudo chown -R $USER:$USER accounts && \
 mv accounts ~/scripts/
 ```
 
