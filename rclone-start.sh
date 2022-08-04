@@ -85,7 +85,7 @@ CONFIG_FILE=$HOME/.config/rclone/rclone.conf
 # ------------------------------------------------------------------------------
 # Rclone Mount (Read/Write)
 
-/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --cache-dir --vfs-cache-mode full ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
+/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
 
 # ------------------------------------------------------------------------------
 # Rclone Mount (Read/Write)
