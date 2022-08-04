@@ -56,11 +56,11 @@ mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
 git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
 cd sbxn-serviceautomount && \
 mkdir -p accounts && \
-mv rclone-start.sh /usr/local/bin/ && \
-mv rclone-stop.sh /usr/local/bin/ && \
-mv rclone-mount.service /etc/systemd/system/ && \
-mv rclone-mount.env /etc/systemd/system/ && \
-chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh
+sudo mv rclone-start.sh /usr/local/bin/ && \
+sudo mv rclone-stop.sh /usr/local/bin/ && \
+sudo mv rclone-mount.service /etc/systemd/system/ && \
+sudo mv rclone-mount.env /etc/systemd/system/ && \
+sudo chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh
 ```
 
 Edit `fuse.conf` file and uncomment `#user_allow_other`
