@@ -6,11 +6,11 @@
 "Automatically Rclone Mount Shared Drives with Randomized Service Account Files."
 </pre>
 
-<img alt="SBXN Service Automount License" src="https://img.shields.io/github/license/rennovus/sbxn-serviceautomount"/>
-<img alt="SBXN Service Automount Release Date" src="https://img.shields.io/github/release-date/rennovus/sbxn-serviceautomount">
-<img alt="SBXN Service Automount Last Commit" src="https://img.shields.io/github/last-commit/rennovus/sbxn-serviceautomount">
-<img alt="SBXN Service Automount Repo Size" src="https://img.shields.io/github/repo-size/rennovus/sbxn-serviceautomount">
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Frennovus%2Fsbxn-serviceautomount&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false"/>
+<img alt="Service Automount License" src="https://img.shields.io/github/license/rennovus/serviceautomount"/>
+<img alt="Service Automount Release Date" src="https://img.shields.io/github/release-date/rennovus/serviceautomount">
+<img alt="Service Automount Last Commit" src="https://img.shields.io/github/last-commit/rennovus/serviceautomount">
+<img alt="Service Automount Repo Size" src="https://img.shields.io/github/repo-size/rennovus/serviceautomount">
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Frennovus%2Fserviceautomount&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false"/>
 
 <hr/>
 </div>
@@ -53,8 +53,8 @@ sudo apt-get install -y rclone fuse mergerfs
 ```sh
 sudo apt-get update -y && sudo apt-get install -y git && \
 mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
-git clone https://github.com/rennovus/sbxn-serviceautomount.git && \
-cd sbxn-serviceautomount && \
+git clone https://github.com/rennovus/serviceautomount.git && \
+cd serviceautomount && \
 mkdir -p accounts && \
 sudo mv rclone-start.sh /usr/local/bin/ && \
 sudo mv rclone-stop.sh /usr/local/bin/ && \
@@ -78,7 +78,7 @@ sudo nano /etc/fuse.conf
 3. Configure your OAuth Client > Desktop App
 4. Create
 
-Rename the file to `credentials.json` and place it in the `sbxn-serviceautomount` repository folder
+Rename the file to `credentials.json` and place it in the `serviceautomount` repository folder
 
 #### To Enable the below two APIs, `visit the link > select the Project > Enable`
 
@@ -174,9 +174,19 @@ sudo nano /usr/local/bin/rclone-stop.sh
 
 ### Service and Environment
 
-Environment variables are the absolute path to files/folders `(ex. /home/myuser/.../)`
+Update environment variables based on the `rclone-start.sh` file
 ```sh
 sudo nano /etc/systemd/system/rclone-mount.env
+```
+
+Get your UID and GID
+```sh
+id
+```
+
+Update the User and Group to match your UID and GID
+```sh
+sudo nano /etc/systemd/system/rclone-mount.service
 ```
 
 #### Service Enable and Start
@@ -206,7 +216,7 @@ sudo systemctl status rclone-mount.service
 
 ### Remove Install Files
 ```sh
-sudo rm ~/sbxn-serviceautomount
+sudo rm ~/serviceautomount
 ```
 
 You can take the files and folders you created to any server and get rclone setup quickly.
