@@ -23,7 +23,7 @@
 
 ## ⚙️ Requirements
 - Linux Server
-- Google Account
+- Google Shared Drive (Manager Permissions)
 - Google APIs & Libraries
 - Python3
 - Rclone
