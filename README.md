@@ -89,7 +89,7 @@ sudo pip3 install -r requirements.txt
 3. Configure your OAuth Client > Desktop App
 4. Create
 
-Rename the file to `credentials.json` and place it in the `serviceautomount` repository folder
+**IMPORTANT:** Rename the file to `credentials.json` and place it in the `serviceautomount` repository folder
 
 #### To Enable the below two APIs, `visit the link > select the Project > Enable`
 
