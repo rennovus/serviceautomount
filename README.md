@@ -41,6 +41,7 @@ sudo apt-get install -y software-properties-common && \
 sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
 sudo apt-get install -y python3.9 python3-venv python3-pip && \
+sudo python3 -m pip install testresources && \
 sudo python3 -m pip install -y --upgrade httplib2
 ```
 
