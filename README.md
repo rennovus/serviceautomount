@@ -48,7 +48,8 @@ If Python3 is installed make sure you have all the extras
 ```sh
 sudo apt-get update -y && \
 sudo apt-get install -y python3-venv python3-pip && \
-sudo python3 -m pip install -y --upgrade httplib2
+sudo python3 -m pip install testresources && \
+sudo python3 -m pip install --upgrade httplib2
 ```
 
 ### Rclone & Fuse
