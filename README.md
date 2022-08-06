@@ -59,6 +59,11 @@ sudo apt-get update -y && \
 sudo apt-get install -y rclone fuse mergerfs
 ```
 
+Edit `fuse.conf` file and delete the `#` from `#user_allow_other`
+```sh
+sudo nano /etc/fuse.conf
+```
+
 ### Service Automount
 
 ```sh
@@ -73,11 +78,6 @@ sudo mv rclone-mount.service /etc/systemd/system/ && \
 sudo mv rclone-mount.env /etc/systemd/system/ && \
 sudo chmod +x /usr/local/bin/rclone-start.sh /usr/local/bin/rclone-stop.sh && \
 sudo pip3 install -r requirements.txt
-```
-
-Edit `fuse.conf` file and uncomment `#user_allow_other`
-```sh
-sudo nano /etc/fuse.conf
 ```
 
 ## 🔑 Enable Google APIs
