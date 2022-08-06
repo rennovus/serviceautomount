@@ -221,7 +221,7 @@ sudo systemctl status rclone-mount.service
 
 ### Remove Install Files
 ```sh
-sudo rm ~/serviceautomount
+sudo rm -rf ~/serviceautomount
 ```
 
 You can take the files and folders you created to any server and get rclone setup quickly.
