@@ -33,12 +33,22 @@
 ## 📤 Install
 
 ### Python3
+
+If Python3 is not installed run this script
 ```sh
 sudo apt-get update -y && \
 sudo apt-get install -y software-properties-common && \
 sudo add-apt-repository ppa:deadsnakes/ppa && \
 sudo apt-get update -y && \
-sudo apt-get install -y python3.9 python3-pip
+sudo apt-get install -y python3.9 python3-venv python3-pip && \
+sudo python3 -m pip install -y --upgrade httplib2
+```
+
+If Python3 is installed make sure you have all the extras
+```sh
+sudo apt-get update -y && \
+sudo apt-get install -y python3-venv python3-pip && \
+sudo python3 -m pip install -y --upgrade httplib2
 ```
 
 ### Rclone & Fuse
@@ -52,7 +62,7 @@ sudo apt-get install -y rclone fuse mergerfs
 
 ```sh
 sudo apt-get update -y && sudo apt-get install -y git && \
-mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02
+mkdir -p ~/scripts ~/cloud/mount ~/cloud/mount01 ~/cloud/mount02 && \
 git clone https://github.com/rennovus/serviceautomount.git && \
 cd serviceautomount && \
 mkdir -p accounts && \
@@ -106,7 +116,7 @@ sudo python3 gen_sa_accounts.py --list-projects
 
 ### Download Existing Service Account Files from Project
 ```sh
-sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
+sudo python3 gen_sa_accounts.py --download-keys PROJECTID
 ```
 
 ### Add Permissions for Service Accounts to access the SHAREDRIVE folder
@@ -114,20 +124,11 @@ sudo python3 gen_sa_accounts.py --download-keys saf-XXXXX
 #### Option #1
 
 ```sh
-python3 add_to_team_drive.py -d SHAREDRIVEID
+sudo python3 add_to_team_drive.py -d SHAREDRIVEID
 ```
 Replace `SHAREDRIVEID` with your `Shared Drive ID`
 
 ![](https://i.imgur.com/53g521H.png)
-
-OR
-
-Replace `SHAREDRIVEID` with `Folder ID` Inside `My Drive` having Editor Permission
-
-![](https://i.imgur.com/hqPT2Jx.png)
-
-
-This will Add all the Service Accounts to your Shared Drive, so make sure you have `Manager` Role in this `SHAREDRIVEID`
 
 #### Option #2 (Personally Easier Shared Drive Permission Management)
 
@@ -205,7 +206,9 @@ sudo systemctl status rclone-mount.service
 ### Test
 
 1. Navigate to rclone mount directory and list files/folders
-2. Reboot server and check `systemctl status rclone-mount.service`
+2. Create a new folder and check your Google Drive to see if it was created
+3. Reboot server and check `systemctl status rclone-mount.service`
+4. Every time you reboot the machine or restart the service it will use a new random service account file
 
 ### Common Issues
 
@@ -213,6 +216,8 @@ sudo systemctl status rclone-mount.service
 2. Check your folder paths locally and inside the rclone-start.sh file `/usr/local/bin/rclone-start.sh`
 3. Double check your quotes when using the rclone union method inside the `rclone-start.sh` file
 4. Make sure that the `fuse.conf` file is setup correctly to allow other users
+5. Still having trouble? Try stopping the service and manually running the rclone-start.sh script
+6. Join our [Discord](https://discord.gg/5WygmaE6a7) for more help
 
 ### Remove Install Files
 ```sh
@@ -222,7 +227,10 @@ sudo rm ~/serviceautomount
 You can take the files and folders you created to any server and get rclone setup quickly.
 1. Install rclone, fuse, and mergerfs
 2. Edit the fuse.conf file
-3. Enable the rclone-mount.service file
+3. Create the mount directories
+4. Copy the necessary files/folders (rclone-mount.service, rclone-mount.env, rclone-start.sh, rclone-stop.sh, rclone.conf and the scripts folder)
+5. Enable the rclone-mount.service file
+6. Done
 
 ## Credits
 

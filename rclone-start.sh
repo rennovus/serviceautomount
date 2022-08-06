@@ -1,12 +1,8 @@
 #!/bin/bash
 ################################################################################
 # Automation Script for Rclone
-#
-#   I am a hobbyist not a developer.
-#   Have suggestions hit me up!
-#   Discord XanderSlaze#0001
-#   https://discord.gg/5WygmaE6a7
-#   Updated: 8/1/2022
+#   If you need help join the Discord https://discord.gg/5WygmaE6a7
+#   Updated: 8/5/2022
 ################################################################################
 
 
@@ -31,7 +27,6 @@ SERVICE02=${SA2}
 ## // CHOOSE YOUR MOUNT TYPE ##
 ###############################
 
-## Choose one or both... its your setup
 ## Going forward I will assume you are NOT going to use the union setup
 
 ## Rclone Mount Folders
@@ -85,29 +80,29 @@ CONFIG_FILE=$HOME/.config/rclone/rclone.conf
 # ------------------------------------------------------------------------------
 # Rclone Mount (Read/Write)
 
-/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
+/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
 
 # ------------------------------------------------------------------------------
 # Rclone Mount (Read/Write)
 
-#/usr/bin/rclone mount crypt-drive02: ${MOUNT02} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE02} &
+#/usr/bin/rclone mount crypt-drive02: ${MOUNT02} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE02} &
 
 # ------------------------------------------------------------------------------
 # Plex Server Rclone Mount (Read Only)
 
-#/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 32G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
+#/usr/bin/rclone mount crypt-drive01: ${MOUNT01} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE01} &
 
-#/usr/bin/rclone mount crypt-drive02: ${MOUNT02} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 32G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE02} &
+#/usr/bin/rclone mount crypt-drive02: ${MOUNT02} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} --drive-service-account-file ${SERVICE02} &
 
 # ------------------------------------------------------------------------------
 # Rclone Union Mount (Read/Write)
 
-#/usr/bin/rclone mount gunion: ${MOUNT_DIR} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 32G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} &
+#/usr/bin/rclone mount gunion: ${MOUNT_DIR} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --vfs-read-ahead 4G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} &
 
 # ------------------------------------------------------------------------------
 # Plex Server Rclone Union Mount (Read Only)
 
-#/usr/bin/rclone mount gunion: ${MOUNT_DIR} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 32G --vfs-read-ahead 2G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} &
+#/usr/bin/rclone mount gunion: ${MOUNT_DIR} --allow-other --allow-non-empty --cache-db-purge --timeout 1h --vfs-cache-mode full --vfs-cache-max-age 72h --vfs-cache-max-size 128G --vfs-read-ahead 4G --vfs-cache-poll-interval 5m --poll-interval 30s --buffer-size 256M --use-mmap --transfers 8 --tpslimit 10 --tpslimit-burst 10 --drive-pacer-min-sleep 50ms --drive-pacer-burst 200 --cache-dir ${CACHE_DIR} --config=${CONFIG_FILE} &
 
 ################################
 ## \\ MOUNT THE RCLONE DRIVES ##
